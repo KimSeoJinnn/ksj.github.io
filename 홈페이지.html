@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="Korea">
+<head>
+    <meta charset="UTF-8">
+    <title>KIMSOEJIN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin-top: 30px;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #12859f;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            position: fixed;
+            left: 0; top: 0; right: 0;
+            margin-bottom: 100px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 1em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 1em;
+            text-align: center;
+        }
+
+        .page {
+            display: none;
+        }
+
+        #home {
+            display: block;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 600px) {
+            nav li {
+                display: block;
+                margin: 0.5em 0;
+            }
+
+            .profile {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.nav-link').on('click', function() {
+                var target = $(this).data('target');
+                $('.page').hide();
+                $('#' + target).show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link" data-target="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-target="recollections">Recollections</a></li>
+                <li><a href="#" class="nav-link" data-target="portfolio">Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="page">
+            <h1>Welcome to My Personal Page</h1>
+            <img src="profile.jpg" alt="프로필" class="profile-pic" width="200">
+            <p>Hello! I am a student in the Department of Computer Engineering at Kangwon National University, South Korea.</p>
+            <p>Hello! I am a student in the department of computer engineering.</p>
+            <p>Hello! I am a student in the department of computer engineering.</p>
+            <p>Hello! I am a student in the department of computer engineering.</p>
+            <p>Hello! I am a student in the department of computer engineering.</p>
+        </section>
+        <section id="recollections" class="page">
+            <h1>My recollections</h1>
+            <p>Here are some of my recollections</p>
+            <table border="0">
+                <tr>
+                    <th><img src="recollcetions1.jpg" alt="추억1" width="400" height="300"></th>
+                    <th><img src="recollcetions2.jpg" alt="추억2" width="400" height="300"></th>
+                </tr>
+                <tr>
+                    <td colspan="2">Family</td>
+                </tr>
+                <tr>
+                    <th><img src="recollcetions3.jpg" alt="추억3" width="400" height="300"></th>
+                    <th><img src="recollcetions4.jpg" alt="추억4" width="400" height="300"></th>
+                </tr>
+                <tr>
+                    <td colspan="2">ROKMC</td>  
+                </tr>
+                <tr>
+                    <th><img src="recollcetions5.jpg" alt="추억5" width="400" height="300"></th>
+                    <th><img src="recollcetions6.jpg" alt="추억6" width="400" height="300"></th>
+                </tr>
+                <tr>
+                    <td colspan="2">Activity<br></td>
+                </tr>
+                <tr>
+                    <th><img src="recollcetions7.jpg" alt="추억7" width="400" height="300"></th>
+                    <th><img src="recollcetions8.jpg" alt="추억8" width="400" height="300"></th>
+                </tr>
+                <tr>
+                    <td colspan="2">Travel<br></td>
+                </tr>
+            </table>
+        </section>
+        <section id="portfolio" class="page">
+            <h1>My Portfolio</h1>
+            <br>
+            <ul>
+                <span><li><a href="robot.pdf">로봇청소기</a></li></span>
+                <span><a href="robot.pdf" role="button" >PDF</a></span>
+                <li><a href="soccer.pdf">축구보드게임</a></li>
+                <li><a href="data.pdf">데이터분석</a></li>
+                <li><a href="coin.pdf">동전던지기 확률 비교</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
